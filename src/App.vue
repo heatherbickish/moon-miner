@@ -1,8 +1,16 @@
 <script setup>
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import { AppState } from './AppState.js'
+import { cheeseService } from "./services/CheeseService.js";
 
-const cheese = ref(0)
+// const cheese = ref(0)
+const cheese = computed(()=> AppState.cheese)
+
+
+function mineCheese(){
+  console.log('mining 🧀')
+  cheeseService.mineCheese()
+}
 
 </script>
 
@@ -17,14 +25,14 @@ const cheese = ref(0)
   <section class="row">
     <div class="col-12">
       <div class="text-center mt-5">
-        <img @click="cheese++" role="button" src="https://em-content.zobj.net/source/facebook/92/new-moon-with-face_1f31a.png" alt="">
+        <img @click="mineCheese()" role="button" src="https://em-content.zobj.net/source/facebook/92/new-moon-with-face_1f31a.png" alt="">
       </div>
     </div>
   </section>
   <section class="row">
     <div class="col">
       <div>
-        <h3 class="text-light text-center mt-5">Cheese:{{ cheese }} </h3>
+        <h3 class="text-light text-center mt-5">Cheese Count:{{ cheese }} </h3>
       </div>
     </div>
 
