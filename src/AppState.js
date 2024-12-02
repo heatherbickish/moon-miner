@@ -13,15 +13,15 @@ export const AppState = reactive({
 
   clickUpgrade: [
     new ClickUpgrade({
-      id: '',
+      id: 'probe',
       name: 'Probe',
       price: 50,
       quantity: 1,
       multiplier: 5
     }),
     new ClickUpgrade({
-      id: '',
-      name: 'Chunker Plunker',
+      id: 'chunk',
+      name: 'Chunker',
       price: 150,
       quantity: 0,
       multiplier: 25
@@ -30,14 +30,14 @@ export const AppState = reactive({
 
   autoUpgrade: [
     new AutoUpdrade({
-      id: '',
+      id: 'slicer',
       name: 'Slice n Dicer',
       price: 1000,
       quantity: 0,
       mulitplier: 150
     }),
     new AutoUpdrade({
-      id: '',
+      id: 'grater',
       name: 'Turbo Grater',
       price: 5000,
       quantity: 0,

@@ -31,11 +31,28 @@ function mineCheese(){
   <section class="row">
     <div class="col">
       <div>
-        <h3 class="text-light text-center mt-5">Cheese Count:{{ cheese }} </h3>
+        <h3 class="text-light text-center my-5">Cheese: {{ cheese }} </h3>
       </div>
     </div>
   </section>
-  
+  <section class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="text-center m-3 p-3">
+        <button class="btn btn-outline-warning mdi mdi-magic-staff fs-3 px-5"> Probe</button>
+      </div>
+      <div class="text-center m-3">
+        <button class="btn btn-outline-warning mdi mdi-cloud-braces fs-3 px-4"> Chunker</button>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="text-center m-3 p-3">
+        <button class="btn btn-outline-warning mdi mdi-knife-military fs-3"> Slice n Dicer</button>
+      </div>
+      <div class="text-center m-3">
+        <button class="btn btn-outline-warning mdi mdi-chip fs-3"> Turbo Grater</button>
+      </div>
+    </div>
+  </section>
 
 </main>
 </template>
