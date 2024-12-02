@@ -8,7 +8,6 @@ const cheese = computed(()=> AppState.cheese)
 
 
 function mineCheese(){
-  console.log('mining 🧀')
   cheeseService.mineCheese()
 }
 
@@ -35,8 +34,8 @@ function mineCheese(){
         <h3 class="text-light text-center mt-5">Cheese Count:{{ cheese }} </h3>
       </div>
     </div>
-
   </section>
+  
 
 </main>
 </template>
