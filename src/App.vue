@@ -6,9 +6,17 @@ import { cheeseService } from "./services/CheeseService.js";
 // const cheese = ref(0)
 const cheese = computed(()=> AppState.cheese)
 
+const clickUpgrade = computed(()=>AppState.clickUpgrade)
+const autoUpgrade = computed(()=> AppState.autoUpgrade)
+
 
 function mineCheese(){
   cheeseService.mineCheese()
+}
+
+
+function buyUpgrade(upgradeName){
+console.log('buying upgrade')
 }
 
 </script>
@@ -38,18 +46,12 @@ function mineCheese(){
   <section class="row justify-content-center">
     <div class="col-md-4">
       <div class="text-center m-3 p-3">
-        <button class="btn btn-outline-warning mdi mdi-magic-staff fs-3 px-5"> Probe</button>
-      </div>
-      <div class="text-center m-3">
-        <button class="btn btn-outline-warning mdi mdi-cloud-braces fs-3 px-4"> Chunker</button>
+        <button @click="buyUpgrade()" v-for="upgrade in clickUpgrade" :key="upgrade.name" class="btn btn-outline-warning mdi mdi-magic-staff fs-3 px-5 mb-5"> {{upgrade.name}} {{ upgrade.price }}c</button>
       </div>
     </div>
     <div class="col-md-4">
       <div class="text-center m-3 p-3">
-        <button class="btn btn-outline-warning mdi mdi-knife-military fs-3"> Slice n Dicer</button>
-      </div>
-      <div class="text-center m-3">
-        <button class="btn btn-outline-warning mdi mdi-chip fs-3"> Turbo Grater</button>
+        <button @click="buyUpgrade()" v-for="upgrade in autoUpgrade" :key="upgrade.name" class="btn btn-outline-warning mdi mdi-knife-military fs-3 mb-5"> {{upgrade.name}} {{ upgrade.price }}c</button>
       </div>
     </div>
   </section>

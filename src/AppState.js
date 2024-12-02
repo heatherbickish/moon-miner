@@ -1,6 +1,6 @@
 import { reactive } from 'vue'
 import { ClickUpgrade } from "./models/ClickUpgrade.js"
-import { AutoUpdrade } from "./models/AutoUpgrade.js"
+import { AutoUpgrade } from "./models/AutoUpgrade.js"
 
 // NOTE AppState is a reactive object to contain app level data
 export const AppState = reactive({
@@ -29,14 +29,14 @@ export const AppState = reactive({
   ],
 
   autoUpgrade: [
-    new AutoUpdrade({
+    new AutoUpgrade({
       id: 'slicer',
       name: 'Slice n Dicer',
       price: 1000,
       quantity: 0,
       mulitplier: 150
     }),
-    new AutoUpdrade({
+    new AutoUpgrade({
       id: 'grater',
       name: 'Turbo Grater',
       price: 5000,
