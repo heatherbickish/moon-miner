@@ -15,8 +15,9 @@ function mineCheese(){
 }
 
 
-function buyUpgrade(upgradeName){
-console.log('buying upgrade')
+function buyClick(upgradeName){
+console.log('buying click')
+cheeseService.buyClick(upgradeName)
 }
 
 </script>
@@ -45,13 +46,19 @@ console.log('buying upgrade')
   </section>
   <section class="row justify-content-center">
     <div class="col-md-4">
-      <div class="text-center m-3 p-3">
-        <button @click="buyUpgrade()" v-for="upgrade in clickUpgrade" :key="upgrade.name" class="btn btn-outline-warning mdi mdi-magic-staff fs-3 px-5 mb-5"> {{upgrade.name}} {{ upgrade.price }}c</button>
+      <div v-for="upgrade in clickUpgrade" :key="upgrade.name" class="text-light text-center">
+        <h3>{{upgrade.name}}</h3>
+        <p>{{ upgrade.price }}c</p>
+        <p>+{{ upgrade.multiplier }}</p>
+        <button @click="buyClick()" class="btn btn-outline-warning fs-5 mb-5 px-4">Buy {{ upgrade.name }}</button>
       </div>
     </div>
     <div class="col-md-4">
-      <div class="text-center m-3 p-3">
-        <button @click="buyUpgrade()" v-for="upgrade in autoUpgrade" :key="upgrade.name" class="btn btn-outline-warning mdi mdi-knife-military fs-3 mb-5"> {{upgrade.name}} {{ upgrade.price }}c</button>
+      <div v-for="upgrade in autoUpgrade" :key="upgrade.name"  class="text-center text-light">
+        <h3>{{upgrade.name}}</h3>
+        <p>{{ upgrade.price }}c</p>
+        <p>+{{ upgrade.multiplier }}</p>
+        <button class="btn btn-outline-warning fs-5 mb-5">Buy {{ upgrade.name }}</button>
       </div>
     </div>
   </section>
